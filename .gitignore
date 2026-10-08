@@ -1,0 +1,20 @@
+# Local VPN profiles and credentials
+/amnezia.conf
+/amnezia*.conf
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Logs and local artifacts
+*.log
+*.pid
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.codebase-memory/

@@ -1,0 +1,27 @@
+# Reference template only; these placeholders are not a usable VPN profile.
+# Prefer copying a complete AmneziaWG profile exported by your VPN setup.
+# Keep all server-provided parameters, including any not listed below.
+# Save the real profile as amnezia.conf; never commit it.
+
+[Interface]
+PrivateKey = REPLACE_WITH_CLIENT_PRIVATE_KEY
+Address = REPLACE_WITH_CLIENT_IPV4_ADDRESS_AND_PREFIX
+# The entrypoint removes DNS; configure proxy resolvers in 3proxy.cfg.
+DNS = 1.1.1.1
+Jc = REPLACE_WITH_SERVER_JC
+Jmin = REPLACE_WITH_SERVER_JMIN
+Jmax = REPLACE_WITH_SERVER_JMAX
+S1 = REPLACE_WITH_SERVER_S1
+S2 = REPLACE_WITH_SERVER_S2
+H1 = REPLACE_WITH_SERVER_H1
+H2 = REPLACE_WITH_SERVER_H2
+H3 = REPLACE_WITH_SERVER_H3
+H4 = REPLACE_WITH_SERVER_H4
+
+[Peer]
+PublicKey = REPLACE_WITH_SERVER_PUBLIC_KEY
+# Add PresharedKey only if it is present in your exported profile.
+# PresharedKey = REPLACE_WITH_PRESHARED_KEY
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25

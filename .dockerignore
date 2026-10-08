@@ -1,0 +1,7 @@
+# Only send files needed to build the image.
+# VPN profiles, Git metadata, and local artifacts stay outside the context.
+**
+!Dockerfile
+!.dockerignore
+!entrypoint.sh
+!3proxy.cfg

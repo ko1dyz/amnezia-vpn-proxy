@@ -1,0 +1,15 @@
+services:
+  vpn-proxy:
+    build: .
+    container_name: cc-vpn-proxy
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1   # Set before startup; /proc/sys is read-only in the container.
+    volumes:
+      - ./amnezia.conf:/config/amnezia.conf:ro
+    ports:
+      - "127.0.0.1:3128:3128"                # Publish only on the host loopback address.
+    restart: unless-stopped
